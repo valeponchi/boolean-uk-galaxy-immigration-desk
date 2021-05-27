@@ -1,0 +1,173 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+
+}
+
+html {
+  --primary-blue: #002f6c;
+  --primary-green: #093f57;
+  --primary-green-light: rgb(18, 161, 18);
+  --primary-blk: #102027;
+  --secondary-white: #ffffff;
+  --secondary-white-off: #e0e0e0;
+}
+
+body {
+  display: grid;
+  grid-template-columns: auto 1fr;
+}
+
+/* TYPOGRAPHY */
+
+body {
+  font-family: sans-serif;
+}
+
+/* Header */
+
+.main-header {
+  max-width: 200px;
+  padding: 0.5rem;
+
+  display: grid;
+  grid-template-rows: 1fr;
+
+  background-color: var(--primary-blue);
+  color: var(--secondary-white);
+}
+
+.side-bar--nav li {
+  padding: 0.5rem;
+  margin-bottom: 0.25rem;
+
+  display: grid;
+  grid-template-columns: 56px 1fr;
+  grid-gap: 1rem;
+  align-items: center;
+
+  border-radius: 0.25rem;
+  background-color: var(--primary-blk);
+  color: var(--secondary-white);
+
+  text-transform: uppercase;
+  font-family: sans-serif;
+  font-size: 1rem;
+  font-weight: bold;
+}
+
+.attribution {
+  font-size: 0.75rem;
+}
+
+.attribution a {
+  color: inherit;
+}
+
+@media only screen and (max-width: 450px) {
+  .side-bar--nav li {
+    padding: 0.25rem;
+    grid-template-columns: 32px;
+  }
+
+  .side-bar--nav span {
+    display: none;
+  }
+
+  .attribution {
+    max-width: 36px;
+    font-size: 0.5rem;
+  }
+}
+
+/* Main */
+
+main {
+  display: grid;
+  grid-template-areas:
+    "info info"
+    "list action";
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 45vh 55vh;
+}
+
+/* INFO SECTION */
+
+.info-section {
+  grid-area: info;
+
+  display: grid;
+  place-items: center;
+
+  border-bottom: 8px solid var(--primary-blk);
+  background-color: var(--primary-green);
+  color: var(--secondary-white);
+}
+
+
+.info-box {
+  border: 3px dotted var(--secondary-white);
+  padding: 5px;
+}
+
+/* LIST SECTION */
+
+.list-section {
+  grid-area: list;
+  padding: 0.5rem;
+  border-right: 4px solid var(--primary-blk);
+}
+
+.list-section,
+.action-section {
+  background-color: var(--secondary-white-off);
+}
+
+.view-button {
+  background-color: var(--secondary-white-off);
+}
+
+.applicant-list {
+  list-style: none;
+}
+
+.applicant {
+  color: var(--secondary-white-off);
+  display: grid;
+  grid-template-columns: 1fr auto;
+  padding: 3px;
+  border: 1px solid var(--primary-blk);
+  background-color: var(--primary-green);
+  margin: 3px 0;
+}
+
+/* ACTION SECTION */
+
+.action-section {
+  grid-area: action;
+
+  display: grid;
+  place-items: center;
+
+  padding: 0.5rem;
+  border-left: 4px solid var(--primary-blk);
+}
+
+.immigration-form {
+  display: grid;
+  gap: 5px;
+  background-color: var(--secondary-white);
+  padding: 10px 20px;
+}
+
+/* ACCEPT BUTTON  */
+.accept-button {
+  color: var(--secondary-white-off);
+  font-weight: 700;
+  display: block;
+  background-color: var(--primary-green-light);
+  padding: 10px 20px;
+  border-radius: 5px;
+}

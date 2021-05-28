@@ -60,11 +60,9 @@ function createListItem(applicant) {
 
     let immigrationFormName = document.querySelector(`.immigration-form-name`)
     immigrationFormName.innerText = `Applicant Name: ${applicant.name}`
-    // we need to append info to infoSection variable
   })
 
   applicantLi.append(viewButton)
-  //   const applicantsList = document.querySelector(".applicant-list")
 
   return applicantLi
 }
@@ -113,7 +111,7 @@ function createImmigrationForm() {
   //APPLICANT'S NAME (EMPTY at beginning)
   const immigrationFormName = document.createElement(`p`)
   immigrationFormName.setAttribute(`class`, `immigration-form-name`)
-  immigrationFormName.innerText = "Applicant Name: " //in the event listener this line will be re-written adding the name
+  immigrationFormName.innerText = "Applicant Name: " 
   
   //FORM
   const formEl = document.createElement(`form`)
@@ -121,7 +119,7 @@ function createImmigrationForm() {
 
   formEl.addEventListener("submit", function (event) {
     event.preventDefault()
-    // console.log(`you submit it!`) //it listens.
+    // console.log(`you submit it!`) //
 
     const newImmigrantDetails = {
       applicantName: state.selectedApplicant,
@@ -131,12 +129,12 @@ function createImmigrationForm() {
     }
     
     state.immigrationDetails = newImmigrantDetails
+    console.log(`state.immigrationDetails: `, state)
 
     // setState({
     //   immigrationDetails: [...state.immigrationDetails, newImmigrantDetails]
     // })
 
-    console.log(`state.immigrationDetails: `, state)
   })
 
   //DESTINATION SECTION
@@ -155,13 +153,11 @@ function createImmigrationForm() {
   const labelPurposeTravel = document.createElement(`label`)
   labelPurposeTravel.setAttribute(`for`, `purpose-label`)
     const labelPurposeTravelTitle = document.createElement(`h4`)
-    labelPurposeTravelTitle.innerText = "Purpose of travel:" ////////////////
+    labelPurposeTravelTitle.innerText = "Purpose of travel:" 
 
   const travelPurposeSelectEl = document.createElement(`select`)
   travelPurposeSelectEl.setAttribute(`id`, `purpose-label`)
   travelPurposeSelectEl.setAttribute(`name`, `purpose-label`)
-
-  //event listener here
 
   let optionVacationEl = document.createElement(`option`)
   optionVacationEl.setAttribute(`value`, `vacation`)
@@ -175,7 +171,7 @@ function createImmigrationForm() {
   const terroristLabel = document.createElement("label")
   terroristLabel.setAttribute("for", "terrorist")
     const terroristLabelTitle = document.createElement(`h4`)
-    terroristLabelTitle.innerText = "Terrorist activity: " //////////////
+    terroristLabelTitle.innerText = "Terrorist activity: " 
   
      //YES RADIO BUTTON
   const terroristYesLabel = document.createElement("label")
@@ -244,13 +240,4 @@ function render() {
   createsListItems()
 }
 
-
-
-//POINTs TO FIX IN THE COLLAB CODE (not this one):
-//form doesn't show up in the right moment in time.
-//  it should show up at the beginning and when you press VIEW(applicant), 
-//  applicant's name should show up in the form as well 
-
-//label and input without matching for and id
-
-//arrow in Accept Button is not an arrow
+//Vale's, Millie's, Ade's code.
